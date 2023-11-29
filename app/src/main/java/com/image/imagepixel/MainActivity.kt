@@ -23,8 +23,6 @@ import java.io.IOException
 class MainActivity : AppCompatActivity(){
 
     private lateinit var binding: ActivityMainBinding
-    private val CAMERA_PERMISSION_REQUEST_CODE = 100
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,14 +30,11 @@ class MainActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         val selectImageButton: Button = binding.selectImageGalleryButton
-        val selectImageCameraButton: Button = binding.selectImageCameraButton
 
         selectImageButton.setOnClickListener {
             openGallery()
         }
-        /*selectImageCameraButton.setOnClickListener {
-            openCamera()
-        }*/
+
     }
 
     private fun openGallery() {
@@ -47,17 +42,12 @@ class MainActivity : AppCompatActivity(){
         startActivityForResult(intent, PICK_IMAGE_REQUEST)
     }
 
-    private fun openCamera() {
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(intent, REQUEST_IMAGE_CAPTURE)
-    }
-
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
             val selectedImageUri: Uri = data.data ?: return
+            println("--------------------------->url${selectedImageUri}")
 
             val options = BitmapFactory.Options()
             options.inJustDecodeBounds = true
@@ -70,7 +60,7 @@ class MainActivity : AppCompatActivity(){
             )
 
             // Check the image dimensions and DPI
-            if (options.outWidth <= 50 && options.outHeight <= 50 && options.inDensity >= 72) {
+            if (options.outWidth > 50 || options.outHeight > 50 || options.inDensity < 72) {
                 // Image does not meet the requirements
                 showToast("Image does not meet the requirements")
                 return
@@ -84,43 +74,6 @@ class MainActivity : AppCompatActivity(){
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-
-
-    /*private fun checkCameraPermission() {
-        if (ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.CAMERA
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            // Request the camera permission
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.CAMERA),
-                CAMERA_PERMISSION_REQUEST_CODE
-            )
-        } else {
-            // Permission has already been granted
-            openCamera()
-        }
-    }*/
-
-   /* // Handle the result of the permission request
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<String>,
-        grantResults: IntArray
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == CAMERA_PERMISSION_REQUEST_CODE) {
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Camera permission granted
-                openCamera()
-            } else {
-                // Camera permission denied
-                // Handle this situation, e.g., show a message to the user
-            }
-        }
-    }*/
 
     private fun saveBitmap(bitmap: Bitmap, fileName: String) {
         val folder = Environment.getExternalStorageDirectory()
@@ -138,6 +91,5 @@ class MainActivity : AppCompatActivity(){
 
     companion object {
         private const val PICK_IMAGE_REQUEST = 1
-        private const val REQUEST_IMAGE_CAPTURE = 2
     }
 }

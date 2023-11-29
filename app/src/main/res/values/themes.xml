@@ -13,4 +13,153 @@
         <item name="colorAccent">@color/darkBlue</item>
 
     </style>
+
+    <style name="heavyLargeText">
+
+        <item name="android:textSize">@dimen/_28sdp</item>
+        <item name="android:fontFamily">@font/</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="extraLargeText">
+
+        <item name="android:textSize">@dimen/_22sdp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="largeTextBold">
+
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="largeTextMedium">
+
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="largeRegular">
+
+        <item name="android:textSize">@dimen/_16ssp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+
+    <style name="toolbarTextMedium">
+
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="toolbarTextRegular">
+
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="toolbarTextBold">
+
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="normalTextRegular">
+
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="normalTextMedium">
+
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="normalTextBold">
+
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+
+    <style name="smallTextMedium">
+
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+
+    <style name="smallTextBold">
+
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="smallTextRegular">
+
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="verySmallTextMedium">
+
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+
+    <style name="verySmallTextBold">
+
+        <item name="android:textSize">@dimen/_6ssp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="verySmallTextRegular">
+
+        <item name="android:textSize">@dimen/_9ssp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/black</item>
+
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
 </resources>
